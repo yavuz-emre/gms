@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en-EN">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GMS</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!--vue.js-->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-i18n@9"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- owl -->
+    <link rel="stylesheet" href="assets/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/vendor/owl.theme.default.min.css">
+</head>
+<body>
+
+<div id="app">
+    <div class="container-fluid p-5 m-0 about-wrapper">
+        <nav>
+            <div class="nav-logo"><a href="index.html">GMS <i class="bi bi-plus-lg"></i></a></div>
+            <div class="flip-card-content">
+                <div class="flip-card-side-a" onclick="openNav()">
+                    MENU
+                </div>
+                <div class="flip-card-side-b" onclick="openNav()">
+                    MENU
+                </div>
+            </div>
+        </nav>
+        <!--  overlay menu -->
+        <div id="myNav" class="overlay">
+            <div class="container-fluid p-0 m-0">
+                <div class="overlay-content">
+                    <div class="row">
+                        <div class="col-12 col-lg-9"></div>
+                        <div class="col-12 col-lg-3 overlay-links border-start">
+                            <ul class="list-unstyled text-uppercase overlay-links1">
+                                <li class="d-flex justify-content-between">
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="about.html">about</a>
+                                        </div>
+                                        <div class="flip-card-side-b">
+                                            <a href="about.html">about</a>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a onclick="closeNav()"><i class="bi bi-x-lg"></i></a>
+                                        </div>
+                                        <div class="flip-card-side-b">
+                                            <a onclick="closeNav()"><i class="bi bi-x-lg"></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="services.html">360 services</a>
+                                        </div>
+                                        <div class="flip-card-side-b">
+                                            <a href="services.html">360 services</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="principles.html">principles</a>
+                                        </div>
+                                        <div class="flip-card-side-b" onclick="openNav()">
+                                            <a href="principles.html">principles</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="news.html">news</a>
+                                        </div>
+                                        <div class="flip-card-side-b" onclick="openNav()">
+                                            <a href="news.html">news</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="team.html">team</a>
+                                        </div>
+                                        <div class="flip-card-side-b" onclick="openNav()">
+                                            <a href="team.html">team</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="contact.html">contact</a>
+                                        </div>
+                                        <div class="flip-card-side-b" onclick="openNav()">
+                                            <a href="contact.html">contact</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flip-card-content">
+                                        <div class="flip-card-side-a">
+                                            <a href="lab.html">la<span class="fst-italic">b</span></a>
+                                        </div>
+                                        <div class="flip-card-side-b" onclick="openNav()">
+                                            <a href="lab.html">la<span class="fst-italic">b</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-unstyled text-capitalize overlay-links2">
+                                <li><a href="">instagram</a></li>
+                                <li><a href="">linkedn</a></li>
+                                <li><a href="">twitter</a></li>
+                                <li class="d-flex justify-content-between">
+                                    <a href="">facebook</a>
+                                    <a href="">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page title -->
+        <div class="p-3"><i class="bi bi-plus-lg"></i> About</div>
+        <!-- about.html banner -->
+        <div class="banner">
+            <div>YOUR PRODUCT, <br>OUR BUSINESS</div>
+            <div class="banner-imgs">
+                <img src="assets/img/about-banner-1.jpg" alt="" class="floatitem d-none d-lg-block">
+                <img src="assets/img/about-banner-2.jpg" alt="" class="floatitem d-lg-block">
+                <img src="assets/img/about-banner-3.jpg" alt="" class="floatitem d-none d-lg-block">
+            </div>
+            <div class="banner-subtitle">at the right PLACE, at the right TIME, at the right COST.</div>
+        </div>
+        <!-- scrollbox -->
+        <div id="scrollbox" class="scroll-text">
+            <div class="content">
+                <p>GMS is a global garment sourcing, design and development practice trusted since 2011. Headquartered
+                    in
+                    Dubai with hubs in Hong Kong, Bangladesh and Turkey, we work with a network of well-tested
+                    manufacturing
+                    partners across the World.</p>
+                <p>For a list of established global brands and retailers, our international team of experts effectively
+                    manage the supply chain to ensure fast, flexible and cost-effective fashion services.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium assumenda atque cumque
+                    cupiditate delectus distinctio error eum ex exercitationem harum impedit iste maxime nesciunt nulla
+                    quae quas quibusdam reprehenderit repudiandae, saepe soluta, temporibus unde velit voluptas,
+                    voluptates? Ab ad alias aperiam atque beatae corporis dolore dolorem eos error expedita hic ipsa
+                    ipsam ipsum itaque laboriosam, laudantium, magnam molestiae nam neque nobis numquam praesentium
+                    quidem quo repellat tempore voluptas voluptatum! Ab ad amet at dolorum excepturi laboriosam libero
+                    maxime quam, reiciendis reprehenderit, sapiente sit temporibus, voluptatibus. Cumque cupiditate
+                    dolorem doloremque dolorum hic illum ipsa natus, nostrum quis reiciendis rerum tempora.</p>
+            </div>
+        </div>
+        <!-- 3boxes on the slider -->
+        <div class="sliderupbox row p-lg-2 pb-lg-4">
+            <div class="col-12 col-lg-4 py-3">
+                <a href="">
+                    <div class="py-2">
+                        <i class="bi bi-plus-lg"></i> 360 Services
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 py-3">
+                <a href="">
+                    <div class="py-2">
+                        <i class="bi bi-plus-lg"></i> 360 Principals
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 col-lg-4 py-3">
+                <a href="">
+                    <div class="py-2 sliderupbox-lastitem">
+                        <i class="bi bi-plus-lg"></i> LA<span class="fst-italic fw-bold">B</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- carousel -->
+        <div class="owl-carousel mt-4 pb-5">
+            <div><img src="assets/img/carousel1.jpg" class="d-block w-100" alt="..."></div>
+            <div><img src="assets/img/carousel2.jpg" class="d-block w-100" alt="..."></div>
+            <div><img src="assets/img/carousel3.jpg" class="d-block w-100" alt="..."></div>
+            <div><img src="assets/img/carousel4.jpg" class="d-block w-100" alt="..."></div>
+            <div><img src="assets/img/carousel1.jpg" class="d-block w-100" alt="..."></div>
+            <div><img src="assets/img/carousel2.jpg" class="d-block w-100" alt="..."></div>
+        </div>
+        <!-- our clients -->
+        <div class="pb-5 clients">
+            <div class="pt-4 pb-5">
+                <span class="fs-1 text-capitalize pe-5 clients-box-title">our clients</span>
+                <span>GMS is to proud to have built successful, long-term partnerships with the following brands and retailers:</span>
+            </div>
+            <div class="row clients">
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Alpha Industries <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Cecil <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Denham <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Deus <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        G-lab <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Obey <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Alpha Industries <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Cecil <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Denham <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Borussia Dortmund <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        HSE 24 <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        IKKS <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        Fynch-Hatton <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <a class="clients-title">
+                        s.Oliver <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4 p-0  d-none d-lg-flex flex-column justify-content-end">
+                    <a class="clients-title clients-title2 py-0">
+                        <i class="bi bi-plus pe-2"></i> MORE
+                    </a>
+                </div>
+                <div class="col-6 col-lg-0">
+                </div>
+                <div class="col-6 col-lg-4 d-block d-lg-none">
+                    <a class="clients-title2 clients-title">
+                        <i class="bi bi-plus"></i> MORE
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="row">
+            <div class="col-12 col-lg-4 col1">
+                <div class="footer-logo order-lg-last">GMS <i class="bi bi-plus-lg"></i></div>
+                <div>We create legacy for forward-thinking brands that generate lasting value.</div>
+            </div>
+            <div class="col-12 col-lg-2"></div>
+            <div class="col-12 col-lg-2">
+                <ul class="list-unstyled text-capitalize footer-links">
+                    <div>
+                        <li>
+                            <div class="flip-card-content">
+                                <div class="flip-card-side-a">
+                                    <a href="">instagram</a>
+                                </div>
+                                <div class="flip-card-side-b">
+                                    <a href="">instagram</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flip-card-content">
+                                <div class="flip-card-side-a">
+                                    <a href="">linkedn</a>
+                                </div>
+                                <div class="flip-card-side-b">
+                                    <a href="">linkedn</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flip-card-content">
+                                <div class="flip-card-side-a">
+                                    <a href="">twitter</a>
+                                </div>
+                                <div class="flip-card-side-b">
+                                    <a href="">twitter</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="flip-card-content">
+                                <div class="flip-card-side-a">
+                                    <a href="">facebook</a>
+                                </div>
+                                <div class="flip-card-side-b">
+                                    <a href="">facebook</a>
+                                </div>
+                            </div>
+                        </li>
+                    </div>
+                    <div>
+                        <a href="">Privacy</a>
+                    </div>
+                </ul>
+            </div>
+            <div class="col-12 col-lg-4 collast d-flex flex-column justify-content-between">
+                <div class="mb-3">
+                    <div class="fw-bold">GMS HEADQUARTER</div>
+                    DUBAI CITY BUILDING 9 OFFICE 220/221 — DUBAI <br>T +97144370680 F +97144370681
+                </div>
+                <div class="my-3">
+                    <div class="fw-bold">GMS OFFICE</div>
+                    8/F, 15 WANG CHIU ROAD KOWLOON BAY — HONG KONG <br>T +852 3723 8534 F +852 9705 3210
+                </div>
+                <div class="mt-3 mb-5">
+                    INFO@GMS-SHOWROOM.COM
+                </div>
+                <div class="mt-5 fs-3">
+                    © Global Managment Services Ltd 2022
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="assets/vendor/jquery.min.js"></script>
+<script src="assets/scripts/main.js"></script>
+<!-- todo: vue ile açlışırsak!!!-->
+<!--<script type="module" src="assets/scripts/vue.js"></script>-->
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<!-- owl -->
+<script src="assets/vendor/owl.carousel.min.js"></script>
+
+</body>
+</html>
