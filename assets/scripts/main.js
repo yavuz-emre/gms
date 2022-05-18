@@ -8,121 +8,124 @@ function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
 
-if('.owl-carousel'){
-$(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        dots: true,
-        responsiveClass:true,
-        autoplay:true,
-        autoplayTimeout:3000,
-        autoplayHoverPause:true,
-        responsive:{
-            0:{
-                items:1,
-            },
-            600:{
-                items:1,
-            },
-            1000:{
-                items:1,
+if ('.owl-carousel') {
+    $(document).ready(function () {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            dots: true,
+            responsiveClass: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                600: {
+                    items: 1,
+                },
+                1000: {
+                    items: 1,
+                }
             }
-        }
-    })
-});
+        })
+    });
 }
 
 
 // translate items on scroll
-var item = document.querySelectorAll(".floatitem");
-(function () {
-    var throttle = function (type, name, obj) {
-        var obj = obj || window;
-        var running = false;
-        var func = function () {
-            if (running) {
-                return;
-            }
-            running = true;
-            requestAnimationFrame(function () {
-                obj.dispatchEvent(new CustomEvent(name));
-                running = false;
-            });
+let item = document.querySelectorAll(".floatitem");
+if (item) {
+    (function () {
+        var throttle = function (type, name, obj) {
+            var obj = obj || window;
+            var running = false;
+            var func = function () {
+                if (running) {
+                    return;
+                }
+                running = true;
+                requestAnimationFrame(function () {
+                    obj.dispatchEvent(new CustomEvent(name));
+                    running = false;
+                });
+            };
+            obj.addEventListener(type, func);
         };
-        obj.addEventListener(type, func);
-    };
-
-    throttle("scroll", "optimizedScroll");
-})();
-
-/*for (let i = 0; i < item.length; i++) {
+        throttle("scroll", "optimizedScroll");
+    })();
     window.addEventListener("optimizedScroll", function () {
-        item[i].style.transform = "translate( 0px, -" + window.scrollY * 0.05 + "%)";
-    })
-}*/
-
-if(item) {
-    window.addEventListener("optimizedScroll", function () {
-        item[0].style.transform = "translate( 0px, -" + window.scrollY * 0.05 + "%)";
-        item[1].style.transform = "translate( 0px, -" + window.scrollY * 0.03 + "%)";
-        item[2].style.transform = "translate( 0px, -" + window.scrollY * 0.04 + "%)";
+        if (item[0]) {
+            item[0].style.transform = "translate( 0px, -" + window.scrollY * 0.09 + "%)";
+        }
+        if (item[1]) {
+            item[1].style.transform = "translate( 0px, -" + window.scrollY * 0.02 + "%)";
+        }
+        if (item[2]) {
+            item[2].style.transform = "translate( " + window.scrollY * 0.03 + "%, 0%)";
+        }
     })
 }
 
-
-
-var container = document.querySelector('#app');
-var inner = document.querySelector('.home-wrapper-overlay');
-var onMouseEnterHandler = function(event) {
-    update(event);
-};
-var onMouseLeaveHandler = function() {
-    inner.style = "";
-};
-var onMouseMoveHandler = function(event) {
-    if (isTimeToUpdate()) {
+/* index.html GÜL efekti */
+let t = document.querySelector('.home-wrapper')
+if (t) {
+    var container = document.querySelector('#app');
+    var inner = document.querySelector('.home-wrapper-overlay1');
+    var onMouseEnterHandler = function (event) {
         update(event);
+    };
+    var onMouseLeaveHandler = function () {
+        inner.style = "";
+    };
+    var onMouseMoveHandler = function (event) {
+        if (isTimeToUpdate()) {
+            update(event);
+        }
+    };
+    container.onmouseenter = onMouseEnterHandler;
+    container.onmouseleave = onMouseLeaveHandler;
+    container.onmousemove = onMouseMoveHandler;
+    var counter = 0;
+    var updateRate = 1;
+    var isTimeToUpdate = function () {
+        return counter++ % updateRate === 0;
+    };
+    var mouse = {
+        _x: 0,
+        _y: 0,
+        x: 0,
+        y: 0,
+        updatePosition: function (event) {
+            var e = event || window.event;
+            this.x = e.clientX - this._x;
+            this.y = (e.clientY - this._y) * -1;
+        },
+        setOrigin: function (e) {
+            this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
+            this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
+        },
+        show: function () {
+            return '(' + this.x + ', ' + this.y + ')';
+        }
     }
-};
-container.onmouseenter = onMouseEnterHandler;
-container.onmouseleave = onMouseLeaveHandler;
-container.onmousemove = onMouseMoveHandler;
-var counter = 0;
-var updateRate = 10;
-var isTimeToUpdate = function() {
-    return counter++ % updateRate === 0;
-};
-var mouse = {
-    _x: 0,
-    _y: 0,
-    x: 0,
-    y: 0,
-    updatePosition: function(event) {
-        var e = event || window.event;
-        this.x = e.clientX - this._x;
-        this.y = (e.clientY - this._y) * -1;
-    },
-    setOrigin: function(e) {
-        this._x = e.offsetLeft + Math.floor(e.offsetWidth/2);
-        this._y = e.offsetTop + Math.floor(e.offsetHeight/2);
-    },
-    show: function() { return '(' + this.x + ', ' + this.y + ')'; }
-}
 // Track the mouse position relative to the center of the container.
-mouse.setOrigin(container);
-var update = function(event) {
-    mouse.updatePosition(event);
-    updateTransformStyle(
-        (mouse.y / inner.offsetHeight/2).toFixed(2),
-        (mouse.x / inner.offsetWidth/2).toFixed(2)
-    );
-};
-var updateTransformStyle = function(x, y) {
-    var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
-    inner.style.transform = style;
-    inner.style.webkitTransform = style;
-    inner.style.mozTransform = style;
-    inner.style.msTransform = style;
-    inner.style.oTransform = style;
-};
+    mouse.setOrigin(container);
+    var update = function (event) {
+        mouse.updatePosition(event);
+        updateTransformStyle(
+            (mouse.y / inner.offsetHeight / 2).toFixed(2),
+            (mouse.x / inner.offsetWidth / 2).toFixed(2)
+        );
+    };
+    var updateTransformStyle = function (x, y) {
+        var style = "rotateX(" + x * 10 + "deg) rotateY(" + y * 10 + "deg)";
+        inner.style.transform = style;
+        inner.style.webkitTransform = style;
+        inner.style.mozTransform = style;
+        inner.style.msTransform = style;
+        inner.style.oTransform = style;
+    };
+}
+/* END: index.html GÜL efekti */

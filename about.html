@@ -23,9 +23,10 @@
 <body>
 
 <div id="app">
-    <div class="container-fluid p-5 m-0 about-wrapper">
-        <nav>
-            <div class="nav-logo"><a href="index.html">GMS <i class="bi bi-plus-lg"></i></a></div>
+    <div class="container-fluid p-lg-5 m-0 about-wrapper">
+        <nav class="py-4">
+            <div class="nav-logo"><a href="index.html">GMS <img src="assets/img/+.svg" alt="" height="50px"
+                                                                class="ps-2 pb-1"></a></div>
             <div class="flip-card-content">
                 <div class="flip-card-side-a" onclick="openNav()">
                     MENU
@@ -140,14 +141,14 @@
         <div class="p-3"><i class="bi bi-plus-lg"></i> About</div>
         <!-- about.html banner -->
         <div class="banner">
-            <div>YOUR PRODUCT, <br>OUR BUSINESS</div>
+            <div id="banner-title">YOUR PRODUCT, <br>OUR BUSINESS</div>
             <div class="banner-imgs">
                 <img src="assets/img/about-banner-1.jpg" alt="" class="floatitem d-none d-lg-block">
                 <img src="assets/img/about-banner-2.jpg" alt="" class="floatitem d-lg-block">
                 <img src="assets/img/about-banner-3.jpg" alt="" class="floatitem d-none d-lg-block">
             </div>
-            <div class="banner-subtitle">at the right PLACE, at the right TIME, at the right COST.</div>
         </div>
+        <div class="banner-subtitle">at the right PLACE, at the right TIME, at the right COST.</div>
         <!-- scrollbox -->
         <div id="scrollbox" class="scroll-text">
             <div class="content">
@@ -171,25 +172,31 @@
         <!-- 3boxes on the slider -->
         <div class="sliderupbox row p-lg-2 pb-lg-4">
             <div class="col-12 col-lg-4 py-3">
-                <a href="">
-                    <div class="py-2">
-                        <i class="bi bi-plus-lg"></i> 360 Services
-                    </div>
-                </a>
+                <div>
+                    <a href="">
+                        <div class="py-2">
+                            <i class="bi bi-plus-lg"></i> 360 Services
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="col-12 col-lg-4 py-3">
-                <a href="">
-                    <div class="py-2">
-                        <i class="bi bi-plus-lg"></i> 360 Principals
-                    </div>
-                </a>
+                <div>
+                    <a href="">
+                        <div class="py-2">
+                            <i class="bi bi-plus-lg"></i> 360 Principals
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="col-12 col-lg-4 py-3">
-                <a href="">
-                    <div class="py-2 sliderupbox-lastitem">
-                        <i class="bi bi-plus-lg"></i> LA<span class="fst-italic fw-bold">B</span>
-                    </div>
-                </a>
+                <div>
+                    <a href="">
+                        <div class="py-2 sliderupbox-lastitem">
+                            LA<span class="fst-italic fw-bold">B</span>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
         <!-- carousel -->
@@ -202,7 +209,7 @@
             <div><img src="assets/img/carousel2.jpg" class="d-block w-100" alt="..."></div>
         </div>
         <!-- our clients -->
-        <div class="pb-5 clients">
+        <div class="pb-5">
             <div class="pt-4 pb-5">
                 <span class="fs-1 text-capitalize pe-5 clients-box-title">our clients</span>
                 <span>GMS is to proud to have built successful, long-term partnerships with the following brands and retailers:</span>
@@ -297,7 +304,8 @@
     <footer>
         <div class="row">
             <div class="col-12 col-lg-4 col1">
-                <div class="footer-logo order-lg-last">GMS <i class="bi bi-plus-lg"></i></div>
+                <div class="footer-logo order-lg-last">GMS <img src="assets/img/+.svg" alt="" height="70px"
+                                                                class="ps-2 pb-1"></div>
                 <div>We create legacy for forward-thinking brands that generate lasting value.</div>
             </div>
             <div class="col-12 col-lg-2"></div>
@@ -305,44 +313,16 @@
                 <ul class="list-unstyled text-capitalize footer-links">
                     <div>
                         <li>
-                            <div class="flip-card-content">
-                                <div class="flip-card-side-a">
-                                    <a href="">instagram</a>
-                                </div>
-                                <div class="flip-card-side-b">
-                                    <a href="">instagram</a>
-                                </div>
-                            </div>
+                            <a href="">instagram</a>
                         </li>
                         <li>
-                            <div class="flip-card-content">
-                                <div class="flip-card-side-a">
-                                    <a href="">linkedn</a>
-                                </div>
-                                <div class="flip-card-side-b">
-                                    <a href="">linkedn</a>
-                                </div>
-                            </div>
+                            <a href="">linkedn</a>
                         </li>
                         <li>
-                            <div class="flip-card-content">
-                                <div class="flip-card-side-a">
-                                    <a href="">twitter</a>
-                                </div>
-                                <div class="flip-card-side-b">
-                                    <a href="">twitter</a>
-                                </div>
-                            </div>
+                            <a href="">twitter</a>
                         </li>
                         <li>
-                            <div class="flip-card-content">
-                                <div class="flip-card-side-a">
-                                    <a href="">facebook</a>
-                                </div>
-                                <div class="flip-card-side-b">
-                                    <a href="">facebook</a>
-                                </div>
-                            </div>
+                            <a href="">facebook</a>
                         </li>
                     </div>
                     <div>

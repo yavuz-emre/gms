@@ -32,24 +32,220 @@ nav {
     font-family: NeueHaasDisplayLight, serif;
 }
 
-.nav-logo{
+.nav-logo {
     font-size: 4rem;
+}
+
+.nav-logo a {
+    line-height: 1;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     transition: .4s;
+    display: flex;
+    align-items: center;
 }
 
 nav a:hover {
-    color: grey;
+    color: white;
+    filter: invert(.4);
     transition: .4s;
 }
 
 @media (max-width: 576px) {
     nav {
         padding: 5px;
+    }
+}
+
+/* flip card */
+.flip-card-content {
+    transform-style: preserve-3d;
+}
+
+nav .flip-card-content {
+    transform: translateX(-10px);
+}
+
+.flip-card-side-a {
+    position: relative;
+    backface-visibility: hidden;
+    transform-origin: 50% 50%;
+    transition: all 1s ease-in-out;
+}
+
+.flip-card-side-b {
+    top: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    transform-origin: 50% 50%;
+    transition: all 1s ease-in-out;
+}
+
+.flip-card-side-a {
+    transform: rotateX(0deg) translateZ(30px);
+    z-index: 1;
+}
+
+.flip-card-side-b {
+    transform: rotateX(90deg) translateZ(30px);
+    opacity: 0;
+}
+
+.flip-card-content:hover .flip-card-side-a {
+    transform: rotateX(-90deg) translateZ(30px);
+    opacity: 0;
+}
+
+.flip-card-content:hover .flip-card-side-b {
+    transform: rotateX(0deg) translateZ(30px);
+    z-index: 1;
+    opacity: 1;
+}
+
+.flip-card-content:hover .flip-card-side-b a {
+    color: grey !important;
+}
+
+/* index.html */
+
+.home-wrapper {
+    perspective: 100px;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(19, 19, 21);
+    background-size: cover;
+    transition: transform 0.5s;
+    font-family: NeueHaasDisplayLight;
+    overflow: hidden;
+}
+
+.home-wrapper-overlay1 {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-image: url("../img/slider.jpg");
+    background-size: contain;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.5s;
+}
+
+.home-wrapper-overlay2 {
+    width: 500px;
+    height: 800px;
+    position: absolute;
+    top: 80px;
+    left: 58.5%;
+    background-image: url("../img/slider2.jpg");
+    background-size: contain;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    padding: 50px;
+    text-align: center;
+    background-position: center;
+    transition: transform 0.5s;
+}
+
+@media (max-width: 576px) {
+    .home-wrapper-overlay2 {
+        width: 300px;
+        height: 600px;
+        top: 100px;
+        left: 12.5%;
+    }
+}
+
+.home-wrapper-overlay3 {
+    width: 100vw;
+    height: 300px;
+    display: flex;
+    top: 0;
+    position: absolute;
+    background-image: url("../img/gmslogobos.svg");
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-size: contain;
+    background-position: center;
+    transition: ease .7s;
+    transform: translateY(105%);
+}
+
+.home-wrapper-overlay3:hover {
+    background-image: url("../img/gmslogodolu.svg");
+    transition: ease .5s;
+}
+
+.pluses {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.pluses1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: lighter;
+}
+
+.home-text-box1 {
+    width: 400px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    font-size: 2rem;
+}
+
+.home-text-box2 {
+    width: 550px;
+    position: absolute;
+    right: -20px;
+    bottom: 90px;
+    font-size: 1rem;
+}
+
+.home-text-menubtn {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    right: 100px;
+    top: 100px;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .home-text-box1 {
+        width: 200px;
+        position: absolute;
+        left: 50px;
+        top: 150px;
+        font-size: 1rem;
+    }
+    .home-text-box2 {
+        width: 350px;
+        position: absolute;
+        right: 0px;
+        bottom: 150px;
+        font-size: 1rem;
+    }
+    .home-text-menubtn {
+        position: absolute;
+        right: 30px;
+        top: 50px;
     }
 }
 
@@ -78,7 +274,7 @@ nav a:hover {
     text-decoration: none;
     color: white;
     display: block;
-    transition: 0.3s;
+    transition: 0.9s;
     padding-top: 8px;
     padding-bottom: 8px;
 }
@@ -106,140 +302,6 @@ nav a:hover {
     font-family: NeueHaasDisplayThin, serif;
 }
 
-/* flip card */
-.flip-card-content {
-    transform-style: preserve-3d;
-}
-nav .flip-card-content {
-    transform: translateX(-10px);
-}
-.flip-card-side-a{
-    position: relative;
-    backface-visibility: hidden;
-    transform-origin: 50% 50%;
-    transition: all 1s ease-in-out;
-}
-.flip-card-side-b {
-    top: 0;
-    position: absolute;
-    backface-visibility: hidden;
-    transform-origin: 50% 50%;
-    transition: all 1s ease-in-out;
-}
-.flip-card-side-a {
-    transform: rotateX(0deg) translateZ(30px);
-    z-index: 1;
-}
-.flip-card-side-b {
-    transform: rotateX(90deg) translateZ(30px);
-    opacity: 0;
-}
-.flip-card-content:hover .flip-card-side-a {
-    transform: rotateX(-90deg) translateZ(30px);
-    opacity: 0;
-}
-.flip-card-content:hover .flip-card-side-b {
-    transform: rotateX(0deg) translateZ(30px);
-    z-index: 1;
-    opacity: 1;
-}
-
-.flip-card-content:hover .flip-card-side-b a{
-    color: grey!important;
-}
-
-/* index.html */
-
-#app{
-    background-color: rgb(19,19,21);
-}
-.home-wrapper {
-    perspective: 100px;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    background-image: url("../img/slider.jpg");
-    background-size: cover;
-    transition: transform 0.5s;
-}
-
-.home-wrapper-overlay {
-    width: 500px;
-    height: 800px;
-    position: absolute;
-    top: 80px;
-    left: 58.5%;
-    background-image: url("../img/slider2.jpg");
-    background-size: contain;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    padding: 50px;
-    text-align: center;
-    background-position: center;
-    transition: transform 0.5s;
-}
-
-.home-wrapper-overlay2 {
-    transform: translateY(80%);
-    width: 100%;
-    height: 350px;
-    position: absolute;
-    background-image: url("../img/gms_slider.png");
-    background-size: contain;
-    background-origin: content-box;
-    background-repeat: no-repeat;
-    padding: 50px;
-    text-align: center;
-    background-position: center;
-}
-
-.pluses {
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    box-sizing: border-box;
-    display: flex;
-    padding: 40px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 2rem;
-}
-
-.pluses1 {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-weight: lighter;
-}
-
-.home-text-box1 {
-    width: 400px;
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    font-size: 2rem;
-}
-
-.home-text-box2 {
-    width: 550px;
-    position: absolute;
-    right: 0px;
-    bottom: 70px;
-    font-size: 1rem;
-}
-
-.home-text-box3 {
-    width: 50px;
-    height: 30px;
-    position: absolute;
-    right: 100px;
-    top: 100px;
-    font-size: 1rem;
-}
-
 /* ABOUT.html *********************** */
 
 .about-wrapper {
@@ -253,23 +315,24 @@ nav .flip-card-content {
 }
 
 .about-wrapper .banner .banner-imgs {
-    width: 100%;
+    width: 50%;
     height: 800px;
     position: relative;
+    margin: auto;
 }
 
 .about-wrapper .banner img:nth-child(1) {
     height: 500px;
     position: absolute;
     top: 250px;
-    left: 150px;
+    left: 0%;
 }
 
 .about-wrapper .banner img:nth-child(2) {
     height: 500px;
     position: absolute;
     top: 50px;
-    left: 500px;
+    left: 30%;
     z-index: 99;
 }
 
@@ -277,7 +340,19 @@ nav .flip-card-content {
     height: 700px;
     position: absolute;
     top: -100px;
-    left: 800px;
+    left: 60%;
+}
+
+.about-wrapper .banner-subtitle{
+    font-size: 2.3rem;
+    font-family: NeueHaasDisplayThin, serif;
+    padding-left: 160px;
+}
+
+@media (max-width: 576px){
+    .about-wrapper .banner-subtitle {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -310,6 +385,7 @@ nav .flip-card-content {
     padding-left: 50px;
     font-size: 2.3rem;
     margin: 50px 0;
+    font-family: NeueHaasDisplayThin, serif;
 }
 
 @media (max-width: 576px) {
@@ -335,23 +411,38 @@ nav .flip-card-content {
 }
 
 #scrollbox::-webkit-scrollbar {
-    background: gray;
-    width: 6px;
+    background: white;
+    width: 5px;
 }
 
 #scrollbox::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 0 2.5px black;
+    -webkit-box-shadow: inset 0 0 0 2.3px black;
 }
 
 #scrollbox::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: white;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255);
 }
 
 div.scroll-text {
     height: 300px;
     overflow: auto;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#banner-title {
+    /* This section calls the slideInFromLeft animation we defined above */
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+    padding: 30px;
 }
 
 /*#scrollbox:hover::-webkit-scrollbar {
@@ -365,6 +456,7 @@ div.scroll-text {
 .sliderupbox {
     font-size: 2.5rem;
     font-family: NeueHaasDisplayThin, serif;
+    height: 100%;
 }
 
 .sliderupbox a {
@@ -375,6 +467,7 @@ div.scroll-text {
 
 .sliderupbox-lastitem {
     font-family: NeueHaasDisplayLight, serif;
+    transform: scale(1,1.6) translateY(-4px);
 }
 
 .sliderupbox a:hover {
@@ -382,8 +475,7 @@ div.scroll-text {
     transition: ease .4s;
 }
 
-.sliderupbox div div {
-    width: 100%;
+.sliderupbox .col-12 > div {
     border-bottom: .2px solid gray;
 }
 
@@ -413,7 +505,7 @@ button.owl-dot.active {
 }
 
 /* clients */
-.clients div {
+.clients > div {
     padding: 10px;
 }
 
@@ -459,8 +551,10 @@ footer {
     font-family: NeueHaasDisplayLight, serif;
 }
 
-footer li{
-    margin: 10px 0;
+@media (max-width: 576px){
+    footer {
+        padding: 20px 10px;
+    }
 }
 
 footer a {
@@ -471,7 +565,7 @@ footer a {
 }
 
 footer a:hover {
-    color: black;
+    color: grey;
     transition: ease .4s;
 }
 
@@ -492,6 +586,9 @@ footer .collast {
 .footer-logo {
     font-size: 6rem;
     color: white;
+    line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 .footer-links {
@@ -557,4 +654,88 @@ footer .collast {
 
 .team-members-info p {
     margin-bottom: 1.8rem;
+}
+
+@media (max-width: 576px) {
+    .team-banner {
+        padding: 30px 0;
+    }
+    .team-banner-title {
+        padding: 0 0 30px;
+        font-size: 1.4rem;
+    }
+    .team-banner-text {
+        font-size: 1.2rem;
+        text-indent: 100px;
+    }
+    .team-members-title {
+        font-size: 1.6rem;
+    }
+
+    .team-members-detail {
+        font-size: 1.4rem;
+        margin: 5px 0 10px 0;
+    }
+}
+
+
+/* PRINCIPLES.html */
+
+/*accordion*/
+.accordion{
+    margin-bottom: 100px;
+}
+
+.accordion-button{
+    padding: 20px 0 !important;
+}
+
+.accordion-button::before {
+    flex-shrink: 0;
+    width: var(--bs-accordion-btn-icon-width);
+    height: var(--bs-accordion-btn-icon-width);
+    margin-right: 20px ;
+    content: "";
+    background-image: var(--bs-accordion-btn-icon);
+    background-repeat: no-repeat;
+    background-size: var(--bs-accordion-btn-icon-width);
+    transition: 1s;
+    background-image: url('../img/circle+.svg') !important;
+    transform: scale(1.4);
+}
+
+.accordion-button:not(.collapsed)::before {
+    background-image: url('../img/circlex.svg') !important;
+    transition: 1s;
+}
+
+.accordion-button::after {
+    background-image: none !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none !important;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: var(--bs-accordion-btn-focus-border-color);
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.accordion-item, .accordion-button{
+    border-color: black !important;
+    font-size: 2.3rem !important;
+    font-family: NeueHaasDisplayThin, serif;
+}
+
+.accordion *{
+    background-color: black !important;
+    color: white !important;
+    border: none;
+}
+
+.accordion-collapse{
+    height: 400px;
 }

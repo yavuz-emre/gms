@@ -24,9 +24,9 @@
 
 <div id="app">
     <div class="container-fluid p-0 m-0 home-wrapper">
-        <div class="home-wrapper-overlay"></div>
+        <div class="home-wrapper-overlay1"></div>
         <div class="home-wrapper-overlay2"></div>
-        <div class="pluses">
+        <div class="pluses p-lg-5 p-3">
             <div class="pluses1">
                 <div>+</div>
                 <div>+</div>
@@ -43,12 +43,13 @@
                 <div>+</div>
             </div>
         </div>
+        <div class="home-wrapper-overlay3 d-none d-lg-block"  onclick="openNav()"></div>
         <div class="home-text-box1">TAILOR MADE SOLUTIONS FOR READY-MADE GARMENTS</div>
         <div class="home-text-box2">WE ARE A GLOBAL SOURCING, DESIGN AND PRODUCTION PRACTICE PROVIDING TAILOR-MADE
             SOLUTIONS FOR READY-MADE
             GARMENTS.
         </div>
-        <div class="home-text-box3" onclick="openNav()">
+        <div class="home-text-menubtn" onclick="openNav()">
             <div class="flip-card-content">
                 <div class="flip-card-side-a" onclick="openNav()">
                     MENU
@@ -58,104 +59,104 @@
                 </div>
             </div>
         </div>
-
-        <!--  overlay menu -->
-        <div id="myNav" class="overlay">
-            <div class="container-fluid p-0 m-0">
-                <div class="overlay-content">
-                    <div class="row">
-                        <div class="col-12 col-lg-9"></div>
-                        <div class="col-12 col-lg-3 overlay-links border-start">
-                            <ul class="list-unstyled text-uppercase overlay-links1">
-                                <li class="d-flex justify-content-between">
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="about.html">about</a>
-                                        </div>
-                                        <div class="flip-card-side-b">
-                                            <a href="about.html">about</a>
-                                        </div>
+    </div>
+    <!--  overlay menu -->
+    <div id="myNav" class="overlay">
+        <div class="container-fluid p-0 m-0">
+            <div class="overlay-content">
+                <div class="row">
+                    <div class="col-12 col-lg-9"></div>
+                    <div class="col-12 col-lg-3 overlay-links border-start">
+                        <ul class="list-unstyled text-uppercase overlay-links1">
+                            <!-- todo: bu X te bir sorun var-->
+                            <li class="d-flex justify-content-between">
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="about.html">about</a>
                                     </div>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a onclick="closeNav()"><i class="bi bi-x-lg"></i></a>
-                                        </div>
-                                        <div class="flip-card-side-b">
-                                            <a onclick="closeNav()"><i class="bi bi-x-lg"></i></a>
-                                        </div>
+                                    <div class="flip-card-side-b">
+                                        <a href="about.html">about</a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="services.html">360 services</a>
-                                        </div>
-                                        <div class="flip-card-side-b">
-                                            <a href="services.html">360 services</a>
-                                        </div>
+                                </div>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a onclick="closeNav()"><i class="bi bi-x-lg"></i></a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="principles.html">principles</a>
-                                        </div>
-                                        <div class="flip-card-side-b" onclick="openNav()">
-                                            <a href="principles.html">principles</a>
-                                        </div>
+                                    <div class="flip-card-side-b">
+                                        <a onclick="closeNav()"><i class="bi bi-x-lg"></i></a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="news.html">news</a>
-                                        </div>
-                                        <div class="flip-card-side-b" onclick="openNav()">
-                                            <a href="news.html">news</a>
-                                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="services.html">360 services</a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="team.html">team</a>
-                                        </div>
-                                        <div class="flip-card-side-b" onclick="openNav()">
-                                            <a href="team.html">team</a>
-                                        </div>
+                                    <div class="flip-card-side-b">
+                                        <a href="services.html">360 services</a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="contact.html">contact</a>
-                                        </div>
-                                        <div class="flip-card-side-b" onclick="openNav()">
-                                            <a href="contact.html">contact</a>
-                                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="principles.html">principles</a>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="flip-card-content">
-                                        <div class="flip-card-side-a">
-                                            <a href="lab.html">la<span class="fst-italic">b</span></a>
-                                        </div>
-                                        <div class="flip-card-side-b" onclick="openNav()">
-                                            <a href="lab.html">la<span class="fst-italic">b</span></a>
-                                        </div>
+                                    <div class="flip-card-side-b" onclick="openNav()">
+                                        <a href="principles.html">principles</a>
                                     </div>
-                                </li>
-                            </ul>
-                            <ul class="list-unstyled text-capitalize overlay-links2">
-                                <li><a href="">instagram</a></li>
-                                <li><a href="">linkedn</a></li>
-                                <li><a href="">twitter</a></li>
-                                <li class="d-flex justify-content-between">
-                                    <a href="">facebook</a>
-                                    <a href="">Privacy</a>
-                                </li>
-                            </ul>
-                        </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="news.html">news</a>
+                                    </div>
+                                    <div class="flip-card-side-b" onclick="openNav()">
+                                        <a href="news.html">news</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="team.html">team</a>
+                                    </div>
+                                    <div class="flip-card-side-b" onclick="openNav()">
+                                        <a href="team.html">team</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="contact.html">contact</a>
+                                    </div>
+                                    <div class="flip-card-side-b" onclick="openNav()">
+                                        <a href="contact.html">contact</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="flip-card-content">
+                                    <div class="flip-card-side-a">
+                                        <a href="lab.html">la<span class="fst-italic">b</span></a>
+                                    </div>
+                                    <div class="flip-card-side-b" onclick="openNav()">
+                                        <a href="lab.html">la<span class="fst-italic">b</span></a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="list-unstyled text-capitalize overlay-links2">
+                            <li><a href="">instagram</a></li>
+                            <li><a href="">linkedn</a></li>
+                            <li><a href="">twitter</a></li>
+                            <li class="d-flex justify-content-between">
+                                <a href="">facebook</a>
+                                <a href="">Privacy</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
