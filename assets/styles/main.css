@@ -415,6 +415,7 @@ nav .flip-card-content {
 #scrollbox::-webkit-scrollbar {
     background: white;
     width: 5px;
+    height: 20% !important;
 }
 
 #scrollbox::-webkit-scrollbar-track {
@@ -751,7 +752,7 @@ footer .collast {
     background-color: black;
 }
 
-.services-p{
+.services-p {
     text-indent: 150px;
     padding: 50px 0;
     font-size: 2.5rem;
@@ -805,10 +806,12 @@ footer .collast {
         font-size: 1rem;
         padding: 10px;
     }
+
     .filter-btn6 {
         width: 100%;
     }
-    .services-p{
+
+    .services-p {
         font-size: 1.4rem;
         padding: 30px 0;
         text-indent: 50px;
@@ -840,12 +843,12 @@ footer .collast {
     background-color: #2A4656;
 }
 
-.table-wrapper .table tr:nth-child(1){
+.table-wrapper .table tr:nth-child(1) {
     font-weight: bold;
     font-size: 1.6rem;
 }
 
-.table-wrapper .table tr:nth-child(1) td{
+.table-wrapper .table tr:nth-child(1) td {
     padding-top: 20px;
 }
 
@@ -853,12 +856,12 @@ footer .collast {
     width: 20px !important;
 }*/
 
-.table-wrapper .table tr td:nth-child(1){
+.table-wrapper .table tr td:nth-child(1) {
     border-left: 1px solid black !important;
     padding-top: 20px;
 }
 
-.table-wrapper .first{
+.table-wrapper .first {
     border-top: 1px solid black !important;
     font-size: 2rem !important;
 }
@@ -870,7 +873,7 @@ footer .collast {
     background-color: black;
 }
 
-.lab-wrapper .pagetitle{
+.lab-wrapper .pagetitle {
     display: flex;
     align-items: center;
 }
@@ -936,6 +939,7 @@ footer .collast {
         position: absolute;
         font-size: 1.4rem;
     }
+
     .lab-wrapper .banner {
         padding: 0;
         height: 500px;
@@ -944,6 +948,7 @@ footer .collast {
     .lab-wrapper .banner .banner-imgs {
         width: 100%;
     }
+
     .lab-wrapper .banner img:nth-child(2) {
         height: 300px;
         position: absolute;
@@ -951,7 +956,130 @@ footer .collast {
         left: 30px;
         z-index: 99;
     }
+
     .lab-wrapper .scroll-text {
         width: 100%;
     }
+}
+
+.news-box {
+    margin-bottom: 100px;
+    transition: ease 3s;
+    color: white;
+    text-decoration: none;
+}
+
+.news-box:hover {
+    color: grey;
+}
+
+.news-title {
+    font-size: 2.3rem;
+}
+
+.news-detail {
+    font-size: 1.6rem;
+    display:inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    width:100%;
+    margin: 20px 0;
+}
+
+.news-img {
+    width: 100%;
+    height: 600px;
+    border: 1px solid grey;
+    background-position: center;
+    background-size: cover;
+}
+
+.morelessbtn{
+    width: 100px !important;
+    height: 100px !important;
+    display: flex !important;
+    padding: 30px;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: space-between ;
+    border-radius: 20px;
+    transition: ease .5s;
+    font-size: 1.4rem;
+}
+
+.morelessbtn:hover{
+    background-color: #2A4656;
+    transition: ease .5s;
+}
+
+/* news-detail.html*/
+
+.news-datail-wrapper{
+    background-color: black;
+}
+
+.news-datail-wrapper .newsdetail{
+    padding-bottom: 130px;
+    border-bottom: .5px solid grey;
+}
+
+.news-datail-wrapper .scroll-text{
+    width: 100%;
+    height: 400px;
+    margin: 0;
+}
+
+.news-datail-wrapper .col-2{
+    font-size: .7rem;
+}
+
+.news-navigator{
+    font-size: 2rem;
+    font-family: NeueHaasDisplayLight, serif;
+    padding: 80px 0 5px;
+    width: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.news-navigator a{
+    text-decoration: none;
+    color: white;
+    transition: ease .4s;
+    padding: 0 50px;
+}
+
+.news-navigator a:hover{
+    text-decoration: none;
+    color: grey;
+    transition: ease .4s;
+}
+
+
+/* contact.html */
+
+.adress{
+    margin-bottom: 100px;
+}
+
+.adress .lastitem{
+    border-bottom: .5px solid grey;
+}
+
+.adress a{
+    text-decoration: none;
+    color: white;
+    transition: ease .4s;
+}
+
+.adress a:hover{
+    text-decoration: none;
+    color: grey;
+    transition: ease .4s;
 }

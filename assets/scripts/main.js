@@ -133,14 +133,36 @@ if (t) {
 
 /* services filter düğmelerinin active durumlarını kontrol etme */
 // Get the container element
-var btnContainer = document.querySelector(".services-filter-btns-wrapper");
+
+if(btns){
+    var btnContainer = document.querySelector(".services-filter-btns-wrapper");
 // Get all buttons with class="btn" inside the container
 var btns = btnContainer.getElementsByClassName("filter-btn");
 // Loop through the buttons and add the active class to the current/clicked button
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-    });
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+        });
+    }
+}
+
+
+function morebtn() {
+    let more = document.querySelectorAll(".news-box2");
+    for (var i = 0; i < more.length; i++) {
+        more[i].classList.replace( "d-none", "d-block");
+    }
+    document.querySelector('.morebtn').classList.replace('d-flex', 'd-none');
+    document.querySelector('.lessbtn').classList.replace('d-none','d-flex');
+}
+
+function lessbtn() {
+    let more = document.querySelectorAll(".news-box2");
+    for (var i = 0; i < more.length; i++) {
+        more[i].classList.replace( "d-block", "d-none");
+    }
+    document.querySelector('.morebtn').classList.replace('d-none', 'd-flex');
+    document.querySelector('.lessbtn').classList.replace('d-flex','d-none');
 }
