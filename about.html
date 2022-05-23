@@ -23,19 +23,21 @@
 <body>
 
 <div id="app">
-    <div class="container-fluid p-lg-5 m-0 about-wrapper">
-        <nav class="py-4">
-            <div class="nav-logo"><a href="index.html">GMS <img src="assets/img/+.svg" alt="" height="50px"
-                                                                class="ps-2 pb-1"></a></div>
-            <div class="flip-card-content">
-                <div class="flip-card-side-a" onclick="openNav()">
-                    MENU
+    <div class="container-fluid p-lg-3 m-0 about-wrapper">
+        <div class="px-4">
+            <nav class="py-4">
+                <div class="nav-logo"><a href="index.html">GMS <img src="assets/img/+.svg" alt="" height="50px"
+                                                                    class="ps-2 pb-1"></a></div>
+                <div class="flip-card-content">
+                    <div class="flip-card-side-a" onclick="openNav()">
+                        MENU
+                    </div>
+                    <div class="flip-card-side-b" onclick="openNav()">
+                        MENU
+                    </div>
                 </div>
-                <div class="flip-card-side-b" onclick="openNav()">
-                    MENU
-                </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
         <!--  overlay menu -->
         <div id="myNav" class="overlay">
             <div class="container-fluid p-0 m-0">
@@ -148,7 +150,7 @@
                 <img src="assets/img/about-banner-3.jpg" alt="" class="floatitem d-none d-lg-block">
             </div>
         </div>
-        <div class="banner-subtitle">at the right PLACE, at the right TIME, at the right COST.</div>
+        <div class="banner-subtitle">At the right PLACE, at the right TIME, at the right COST.</div>
         <!-- scrollbox -->
         <div id="scrollbox" class="scroll-text">
             <div class="content">
@@ -159,22 +161,14 @@
                     partners across the World.</p>
                 <p>For a list of established global brands and retailers, our international team of experts effectively
                     manage the supply chain to ensure fast, flexible and cost-effective fashion services.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium assumenda atque cumque
-                    cupiditate delectus distinctio error eum ex exercitationem harum impedit iste maxime nesciunt nulla
-                    quae quas quibusdam reprehenderit repudiandae, saepe soluta, temporibus unde velit voluptas,
-                    voluptates? Ab ad alias aperiam atque beatae corporis dolore dolorem eos error expedita hic ipsa
-                    ipsam ipsum itaque laboriosam, laudantium, magnam molestiae nam neque nobis numquam praesentium
-                    quidem quo repellat tempore voluptas voluptatum! Ab ad amet at dolorum excepturi laboriosam libero
-                    maxime quam, reiciendis reprehenderit, sapiente sit temporibus, voluptatibus. Cumque cupiditate
-                    dolorem doloremque dolorum hic illum ipsa natus, nostrum quis reiciendis rerum tempora.</p>
             </div>
         </div>
         <!-- 3boxes on the slider -->
         <div class="sliderupbox row p-lg-2 pb-lg-4">
             <div class="col-12 col-lg-4 py-3">
                 <div>
-                    <a href="">
-                        <div class="py-2">
+                    <a href="services.html">
+                        <div class="py-4">
                             <i class="bi bi-plus-lg"></i> 360 Services
                         </div>
                     </a>
@@ -182,9 +176,9 @@
             </div>
             <div class="col-12 col-lg-4 py-3">
                 <div>
-                    <a href="">
-                        <div class="py-2">
-                            <i class="bi bi-plus-lg"></i> 360 Principals
+                    <a href="principles.html">
+                        <div class="py-4">
+                            <i class="bi bi-plus-lg"></i> Principles
                         </div>
                     </a>
                 </div>
@@ -192,7 +186,7 @@
             <div class="col-12 col-lg-4 py-3">
                 <div>
                     <a href="">
-                        <div class="py-2 sliderupbox-lastitem">
+                        <div class="py-4 sliderupbox-lastitem">
                             LA<span class="fst-italic fw-bold">B</span>
                         </div>
                     </a>
@@ -285,18 +279,50 @@
                         s.Oliver <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
-                <div class="col-6 col-lg-4 p-0  d-none d-lg-flex flex-column justify-content-end">
+                <div class="col-6 col-lg-4 clients d-none">
+                    <a class="clients-title">
+                        s.Oliverssss <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4 clients d-none">
+                    <a class="clients-title">
+                        s.Oliverssss <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4 clients d-none">
+                    <a class="clients-title">
+                        s.Oliverssss <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4 clients d-none">
+                    <a class="clients-title">
+                        s.Oliverssss <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-6 col-lg-4 clients d-none">
+                    <a class="clients-title">
+                        s.Oliverssss <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="pe-3 moreclientbtn d-block"
+                     onclick="moreclients()">
                     <a class="clients-title clients-title2 py-0">
                         <i class="bi bi-plus pe-2"></i> MORE
                     </a>
                 </div>
-                <div class="col-6 col-lg-0">
+                <div class="pe-3 lessclientbtn d-none"
+                     onclick="lessclients()">
+                    <a class="clients-title clients-title2 py-0">
+                        <i class="bi bi-dash pe-2"></i> LESS
+                    </a>
                 </div>
-                <div class="col-6 col-lg-4 d-block d-lg-none">
+             <!--   <div class="col-6 col-lg-0">
+                </div>
+                <div class="col-6 col-lg-4 d-block d-lg-none" onclick="lessclients()">
                     <a class="clients-title2 clients-title">
                         <i class="bi bi-plus"></i> MORE
                     </a>
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -306,7 +332,7 @@
             <div class="col-12 col-lg-4 col1">
                 <div class="footer-logo order-lg-last">GMS <img src="assets/img/+.svg" alt="" height="70px"
                                                                 class="ps-2 pb-1"></div>
-                <div>We create legacy for forward-thinking brands that generate lasting value.</div>
+                <div>We create legacy for forward-thinking<br> brands that generate lasting value.</div>
             </div>
             <div class="col-12 col-lg-2"></div>
             <div class="col-12 col-lg-2">
