@@ -73,11 +73,13 @@ let t = document.querySelector('.home-wrapper')
 if (t) {
     var container = document.querySelector('#app');
     var inner = document.querySelector('.home-wrapper-overlay1');
+    var inner2 = document.querySelector('.home-wrapper-overlay2');
     var onMouseEnterHandler = function (event) {
         update(event);
     };
     var onMouseLeaveHandler = function () {
         inner.style = "";
+        inner2.style = "";
     };
     var onMouseMoveHandler = function (event) {
         if (isTimeToUpdate()) {
@@ -116,16 +118,24 @@ if (t) {
         mouse.updatePosition(event);
         updateTransformStyle(
             (mouse.y / inner.offsetHeight / 2).toFixed(2),
-            (mouse.x / inner.offsetWidth / 2).toFixed(2)
+            (mouse.x / inner.offsetWidth / 2).toFixed(2),
+            (mouse.y / inner2.offsetHeight / 2).toFixed(2),
+            (mouse.x / inner2.offsetWidth / 2).toFixed(2)
         );
     };
     var updateTransformStyle = function (x, y) {
-        var style = "rotateX(" + x * 10 + "deg) rotateY(" + y * 10 + "deg)";
+        var style = "rotateX(" + x * 15 + "deg) rotateY(" + y * 15 + "deg)";
         inner.style.transform = style;
         inner.style.webkitTransform = style;
         inner.style.mozTransform = style;
         inner.style.msTransform = style;
         inner.style.oTransform = style;
+        var style2 = "translateX(" + x * 500 + "px) translateY(" + y * -500 + "px)";
+        inner2.style.transform = style2;
+        inner2.style.webkitTransform = style2;
+        inner2.style.mozTransform = style2;
+        inner2.style.msTransform = style2;
+        inner2.style.oTransform = style2;
     };
 }
 /* END: index.html GÜL efekti */
